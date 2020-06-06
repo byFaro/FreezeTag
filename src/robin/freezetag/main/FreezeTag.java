@@ -21,7 +21,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class FreezeTag extends JavaPlugin implements Listener {
 	
 	public static FreezeTag main;
-	public static String prefix = "§bFreezeTag §8| §7";
+	public static String prefix = "Â§bFreezeTag Â§8| Â§7";
 	
 	public static ArrayList<Arena> arenas = new ArrayList<>();
 
@@ -83,39 +83,6 @@ public class FreezeTag extends JavaPlugin implements Listener {
 	 * Added Save and load Inventory
 	 * 
 	 */
-	
-	@SuppressWarnings("deprecation")
-	@EventHandler
-	public void onAnvil(PrepareAnvilEvent e) {
-		for(ItemStack item : e.getInventory().getContents()) {
-			if(item != null)
-			System.out.println(item.getType());
-		}
-		System.out.println("Result: " + e.getResult().getType() + " ENCHANTS:");
-		try {
-			ItemStack result = e.getResult();
-			ItemMeta resultMeta = result.getItemMeta();
-			for(Enchantment en : resultMeta.getEnchants().keySet()) {
-				System.out.println(en.getName());
-			}
-			for(String lore : resultMeta.getLore()) {
-				System.out.println(lore);
-			}
-		} catch (Exception ex) {
-			
-		}
-	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
 	@EventHandler
 	public void onMove(PlayerMoveEvent e) {
 		for(Arena arena : arenas) {
